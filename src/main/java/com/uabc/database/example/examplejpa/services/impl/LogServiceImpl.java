@@ -24,7 +24,7 @@ public class LogServiceImpl implements LogService {
     private LogConverter logConverter;
 
     @Override
-    public LogModel addLog(LogModel logModel) {
+    public LogModel addLog(LogModel logModel) throws Exception {
         Log temp = logConverter.convertLogModel2Log(logModel);
         Log log = logRepository.save(temp);
         return logConverter.convertLog2LogModel(log);

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service("logService")
 public interface LogService {
-    public abstract LogModel addLog(LogModel logModel);
+    public abstract LogModel addLog(LogModel logModel) throws Exception;
 
     public abstract List<LogModel> listAllLogs();
 

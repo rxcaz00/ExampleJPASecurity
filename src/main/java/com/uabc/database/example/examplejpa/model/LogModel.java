@@ -7,12 +7,12 @@ import java.util.Date;
 @Data
 public class LogModel {
     private int id;
-    private Date date;
+    private String date;
     private String details;
     private String username;
     private String url;
 
-    public LogModel(Date date, String details, String username, String url) {
+    public LogModel(String date, String details, String username, String url) {
         this.date = date;
         this.details = details;
         this.username = username;

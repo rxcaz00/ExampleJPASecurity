@@ -37,7 +37,7 @@ public class LogController {
     }
 
     @PostMapping("/addLog")
-    public String addLog(@ModelAttribute(name = "logModel") LogModel logModel, Model model) {
+    public String addLog(@ModelAttribute(name = "logModel") LogModel logModel, Model model) throws Exception {
         log.info("Method: addLog() -- Params: " + logModel.toString());
         if(logService.addLog(logModel) != null)
             model.addAttribute("result",1);
