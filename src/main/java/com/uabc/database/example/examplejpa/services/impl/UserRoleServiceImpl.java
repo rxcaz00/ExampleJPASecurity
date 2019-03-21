@@ -3,7 +3,7 @@ package com.uabc.database.example.examplejpa.services.impl;
 import com.uabc.database.example.examplejpa.components.UserRoleConverter;
 import com.uabc.database.example.examplejpa.entity.UserRole;
 import com.uabc.database.example.examplejpa.model.UserRoleModel;
-import com.uabc.database.example.examplejpa.respository.UserRoleRepository;
+import com.uabc.database.example.examplejpa.repository.UserRoleRepository;
 import com.uabc.database.example.examplejpa.services.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,7 +41,7 @@ public class UserRoleServiceImpl implements UserRoleService {
 
     @Override
     public UserRole findUserRoleById(int id) {
-        return userRoleRepository.findById(id);
+        return userRoleRepository.findByUserRoleId(id);
     }
 
     public UserRoleModel findUserRoleByIdModel(int id) {

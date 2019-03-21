@@ -4,10 +4,11 @@ package com.uabc.database.example.examplejpa.services;
 
 import com.uabc.database.example.examplejpa.entity.Contact;
 import com.uabc.database.example.examplejpa.model.ContactModel;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service("contactService")
 public interface ContactService {
     public abstract ContactModel addContact(ContactModel contactModel);
 

@@ -1,4 +1,4 @@
-package com.uabc.database.example.examplejpa.respository;
+package com.uabc.database.example.examplejpa.repository;
 
 import com.uabc.database.example.examplejpa.entity.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;

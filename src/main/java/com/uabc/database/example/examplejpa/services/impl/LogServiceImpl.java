@@ -3,7 +3,7 @@ package com.uabc.database.example.examplejpa.services.impl;
 import com.uabc.database.example.examplejpa.components.LogConverter;
 import com.uabc.database.example.examplejpa.entity.Log;
 import com.uabc.database.example.examplejpa.model.LogModel;
-import com.uabc.database.example.examplejpa.respository.LogRepository;
+import com.uabc.database.example.examplejpa.repository.LogRepository;
 import com.uabc.database.example.examplejpa.services.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -2,9 +2,11 @@ package com.uabc.database.example.examplejpa.services;
 
 import com.uabc.database.example.examplejpa.entity.UserRole;
 import com.uabc.database.example.examplejpa.model.UserRoleModel;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("userRoleService")
 public interface UserRoleService {
     public abstract UserRoleModel addUserRole(UserRoleModel userRoleModel);
 

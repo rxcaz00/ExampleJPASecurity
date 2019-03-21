@@ -47,7 +47,7 @@ public class UserRoleController {
 
     @GetMapping("/showUserRoles")
     public ModelAndView showUserRoles() {
-        ModelAndView mav = new ModelAndView(ViewConstant.USERS);
+        ModelAndView mav = new ModelAndView(ViewConstant.USERROLES);
         mav.addObject("userRoles",userRoleService.listAllUserRoles());
         return mav;
     }

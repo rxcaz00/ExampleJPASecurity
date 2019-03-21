@@ -1,4 +1,4 @@
-package com.uabc.database.example.examplejpa.respository;
+package com.uabc.database.example.examplejpa.repository;
 
 import com.uabc.database.example.examplejpa.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,5 +8,5 @@ import java.io.Serializable;
 
 @Repository("userRepository")
 public interface UserRepository extends JpaRepository<User, Serializable> {
-    public abstract User findById(int id);
+    public abstract User findByUsername(String username);
 }

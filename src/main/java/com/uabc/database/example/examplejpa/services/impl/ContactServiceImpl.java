@@ -4,7 +4,7 @@ package com.uabc.database.example.examplejpa.services.impl;
 import com.uabc.database.example.examplejpa.components.ContactConverter;
 import com.uabc.database.example.examplejpa.entity.Contact;
 import com.uabc.database.example.examplejpa.model.ContactModel;
-import com.uabc.database.example.examplejpa.respository.ContactRepository;
+import com.uabc.database.example.examplejpa.repository.ContactRepository;
 import com.uabc.database.example.examplejpa.services.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -28,10 +28,10 @@ public class UserController {
     }
 
     @GetMapping("/userForm")
-    public String redirectUserForm(Model model, @RequestParam(name = "id", required = false) int id) {
+    public String redirectUserForm(Model model, @RequestParam(name = "username", required = false) String username) {
         UserModel userModel = new UserModel();
-        if(id != 0)
-            userModel = userService.findUserByIdModel(id);
+        if(username != null)
+            userModel = userService.findUserByUsernameModel(username);
         model.addAttribute("userModel",userModel);
         return ViewConstant.USER_FORM;
     }
@@ -54,8 +54,8 @@ public class UserController {
     }
 
     @GetMapping("/removeUser")
-    public ModelAndView removeUser(@RequestParam(name = "id", required = true) int id) {
-        userService.removeUser(id);
+    public ModelAndView removeUser(@RequestParam(name = "username", required = true) String username) {
+        userService.removeUser(username);
         return showUsers();
     }
 }

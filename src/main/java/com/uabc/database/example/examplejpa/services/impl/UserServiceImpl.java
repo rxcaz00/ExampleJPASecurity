@@ -3,7 +3,7 @@ package com.uabc.database.example.examplejpa.services.impl;
 import com.uabc.database.example.examplejpa.components.UserConverter;
 import com.uabc.database.example.examplejpa.entity.User;
 import com.uabc.database.example.examplejpa.model.UserModel;
-import com.uabc.database.example.examplejpa.respository.UserRepository;
+import com.uabc.database.example.examplejpa.repository.UserRepository;
 import com.uabc.database.example.examplejpa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -40,18 +40,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserById(int id) {
-        return userRepository.findById(id);
+    public User findUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
-    public UserModel findUserByIdModel(int id) {
-        return userConverter.convertUser2UserModel(findUserById(id));
+    public UserModel findUserByUsernameModel(String username) {
+        return userConverter.convertUser2UserModel(findUserByUsername(username));
     }
 
     @Override
-    public void removeUser(int id) {
-        User user = findUserById(id);
+    public void removeUser(String username) {
+        User user = findUserByUsername(username);
         if(user != null)
-            userRepository.delete(findUserById(id));
+            userRepository.delete(findUserByUsername(username));
     }
 }
