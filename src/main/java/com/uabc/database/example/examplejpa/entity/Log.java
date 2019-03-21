@@ -33,4 +33,8 @@ public class Log {
         this.url = url;
     }
 
+    public Log() {
+
+    }
+
 }
