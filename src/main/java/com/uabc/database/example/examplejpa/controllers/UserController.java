@@ -30,7 +30,7 @@ public class UserController {
     @GetMapping("/userForm")
     public String redirectUserForm(Model model, @RequestParam(name = "username", required = false) String username) {
         UserModel userModel = new UserModel();
-        if(username != null)
+        if(!username.equals("none"))
             userModel = userService.findUserByUsernameModel(username);
         model.addAttribute("userModel",userModel);
         return ViewConstant.USER_FORM;
@@ -39,10 +39,10 @@ public class UserController {
     @PostMapping("/adduser")
     public String addUser(@ModelAttribute(name = "userModel")UserModel userModel, Model model) {
         log.info("Method: addUser() -- Params: " + userModel.toString());
-        if(userService.addUser(userModel) != null)
-            model.addAttribute("result",1);
+        if (userService.addUser(userModel) != null)
+            model.addAttribute("result", 1);
         else
-            model.addAttribute("result",0);
+            model.addAttribute("result", 0);
         return "redirect:/users/showUsers";
     }
 
@@ -53,7 +53,7 @@ public class UserController {
         return mav;
     }
 
-    @GetMapping("/removeUser")
+    @GetMapping("/removeuser")
     public ModelAndView removeUser(@RequestParam(name = "username", required = true) String username) {
         userService.removeUser(username);
         return showUsers();

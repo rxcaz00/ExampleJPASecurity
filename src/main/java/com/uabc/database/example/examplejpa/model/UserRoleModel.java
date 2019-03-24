@@ -5,16 +5,11 @@ import lombok.Data;
 
 @Data
 public class UserRoleModel {
-    private Integer userRoleId;
-    private User user;
+    private int userRoleId;
+    private String user;
     private String role;
 
     public UserRoleModel(){
 
-    }
-
-    public UserRoleModel(User user, String role) {
-        this.user = user;
-        this.role = role;
     }
 }

@@ -12,13 +12,6 @@ public class LogModel {
     private String username;
     private String url;
 
-    public LogModel(String date, String details, String username, String url) {
-        this.date = date;
-        this.details = details;
-        this.username = username;
-        this.url = url;
-    }
-
     public LogModel() {
 
     }

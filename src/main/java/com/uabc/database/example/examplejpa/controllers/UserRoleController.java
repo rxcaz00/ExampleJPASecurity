@@ -26,7 +26,7 @@ public class UserRoleController {
     public String cancel() {
         return "redirect:/userRoles/showUserRoles";
     }
-    @GetMapping("/userForm")
+    @GetMapping("/userRoleForm")
     public String redirectUserRoleForm(Model model, @RequestParam(name = "id", required = false) int id) {
         UserRoleModel userRoleModel = new UserRoleModel();
         if (id != 0)

@@ -8,19 +8,23 @@ import org.springframework.stereotype.Component;
 public class UserConverter {
     public User convertUserModel2User(UserModel userModel) {
         User user = new User();
-        user.setPassword(userModel.getPassword());
-        user.setEnabled(userModel.isEnabled());
+        /*
+        if(userModel.getUsername().charAt(0) == ',')
+            user.setUsername(userModel.getUsername().substring(1));
+        */
         user.setUsername(userModel.getUsername());
         user.setUserRoles(userModel.getUserRoles());
+        user.setPassword(userModel.getPassword());
+        user.setEnabled(userModel.isEnabled());
         return user;
     }
 
     public UserModel convertUser2UserModel(User user) {
         UserModel userModel = new UserModel();
-        userModel.setEnabled(user.isEnabled());
         userModel.setPassword(user.getPassword());
         userModel.setUsername(user.getUsername());
         userModel.setUserRoles(user.getUserRoles());
+        userModel.setEnabled(user.isEnabled());
         return userModel;
     }
 }
