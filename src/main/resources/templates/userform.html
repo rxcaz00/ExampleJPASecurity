@@ -21,8 +21,7 @@
         <br/>
         <form action="#" th:action="@{/users/adduser}" th:object="${userModel}" method="post">
             Username:
-                      <input type="text" class="form-control" disabled="true" th:if="${userModel.username != none}" th:field="*{username}" th:value="${username}"></input>
-                      <input type="hidden" class="form-control" th:field="*{username}" th:value="${username}"></input>
+                      <input type="text" class="form-control" readonly th:if="${userModel.username != none}" th:field="*{username}" th:value="${username}"></input>
                       <input type="text" class="form-control" th:if="${userModel.username == none}" th:field="*{username}" th:value="${username}"></input>
             <br/>
             Password: <input type="text" class="form-control" th:field="*{password}" th:value="${password}"></input>

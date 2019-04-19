@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Login</h1>
+            <br/>
+            <form action="#" th:action="@{/login}" th:object="${userModel}" method="post">
+                <span th:text="${error}"></span>
+                <br/>
+                Username: <input type="text" class="form-control"  th:field="*{username}" th:value="${username}"></input>
+                <br/>
+                Password: <input type="password" class="form-control" th:field="*{password}" th:value="${password}"></input>
+                <br/>
+                <span th:text="${message}"></span>
+                <br/>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Login
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
